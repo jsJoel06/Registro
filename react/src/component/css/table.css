@@ -1,0 +1,67 @@
+body{
+    background-color: #F0F0F0;
+}
+
+h1{
+    font-size: 30px;
+    margin: 15px;
+}
+
+table {
+  margin: 20px auto; 
+  border-collapse: collapse; 
+  border-radius: 5px;
+  overflow: hidden; 
+  width: 90%; 
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+th {
+  background-color: #31C7D3;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd; 
+}
+
+tr:hover {
+  background-color: #f2f2f2; 
+}
+
+@media (max-width: 868px) {
+  table {
+    width: 100%; 
+  }
+
+  th, td {
+    padding: 8px; 
+    font-size: 14px; 
+  }
+}
+
+
+.editar{
+  text-decoration: none;
+  color: white;
+  background-color: #31C7D3;
+  margin: auto 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+}
+
+.eliminar {
+  color: white;
+  background-color: red;
+  margin: auto 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
