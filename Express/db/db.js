@@ -1,22 +1,24 @@
-const mysql = require('mysql2/promise')
 
+const { Pool } = require('pg');
 
-const config = {
-    url: 'mysql://localhost:8080',
-    user: 'root',
-    password: 'admin',
-    database: 'persona_db'
-}
+const pool = new Pool({
+    user: 'root', 
+    host: 'dpg-d3o0v32li9vc73cij8ag-a',
+    password: 'oo2NNsC3vxKcfjZ2PPveOv71iA9E9dxQ',
+    database: 'persona_db_irjf',
+    port: 5432, 
+});
 
 async function coneccionDB() {
-    try{
-        const coneccion = await mysql.createConnection(config);
-        console.log('BD conectada correctamente...')
-        return coneccion;
-    }catch(err){
-        console.error('Error el conectar a Mysql: ', err);
+    try {
+       
+        await pool.query('SELECT NOW()');
+        console.log('BD conectada correctamente...');
+        return pool; 
+    } catch (err) {
+        console.error('Error al conectar a Postgres: ', err);
         throw err;
     }
 }
 
-module.exports = {coneccionDB}
+module.exports = { coneccionDB };

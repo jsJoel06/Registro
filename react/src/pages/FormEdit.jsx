@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import {  useNavigate, useParams } from 'react-router';
+import '../component/css/form.css'
 
 function FormEdit() {
 
@@ -31,7 +32,7 @@ function FormEdit() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:4000/persona/${nombre}`, editar)
+        axios.put(`https://backregistro.onrender.com/persona/${nombre}`, editar)
         .then(() => navigate('/'))
         .catch(err => console.error(err));
     }
@@ -39,7 +40,7 @@ function FormEdit() {
 
   return (
     <>
-       <h2>Agregar Registro</h2>
+       <h2>Editar Registro</h2>
       <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="nombre">Nombre</label><br />

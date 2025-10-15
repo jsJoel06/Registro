@@ -11,7 +11,7 @@ function Table() {
 
   async function Persona() {
     try {
-      const response = await axios.get("http://localhost:4000");
+      const response = await axios.get("https://backregistro.onrender.com");
       setPersona(response.data);
     } catch (err) {
       console.error("Error al cargar Personas: ", err.message);

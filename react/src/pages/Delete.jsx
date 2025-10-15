@@ -10,7 +10,7 @@ function Delete({nombre, onDelete}) {
         if(window.confirm('Seguro que quieres eliminar este registro?')){
             try{
                 setLoading(true);
-                await axios.delete(`http://localhost:4000/persona/${nombre}`);
+                await axios.delete(`https://backregistro.onrender.com/persona/${nombre}`);
                 setLoading(false);
 
                 if(onDelete) onDelete(nombre);

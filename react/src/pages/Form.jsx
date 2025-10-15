@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../component/css/form.css'
 
 function Form() {
   
@@ -16,7 +17,7 @@ function Form() {
      const handleSubmit = async (e) => {
            e.preventDefault();
            try{
-                  await axios.post('http://localhost:4000/persona', persona);
+                  await axios.post('https://backregistro.onrender.com/persona', persona);
             setPersona({
                 nombre: '',
                 edad: '',

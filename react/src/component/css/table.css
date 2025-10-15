@@ -1,20 +1,21 @@
-body{
-    background-color: #F0F0F0;
+body {
+  background-color: #F0F0F0;
 }
 
-h1{
-    font-size: 30px;
-    margin: 15px;
+h1 {
+  font-size: 30px;
+  margin: 15px;
+  text-align: center;
 }
 
 table {
-  margin: 20px auto; 
-  border-collapse: collapse; 
+  margin: 20px auto;
+  border-collapse: collapse;
   border-radius: 5px;
-  overflow: hidden; 
-  width: 90%; 
+  overflow: hidden;
+  width: 90%;
   background-color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 th {
@@ -27,41 +28,71 @@ th {
 td {
   padding: 10px;
   text-align: center;
-  border-bottom: 1px solid #ddd; 
+  border-bottom: 1px solid #ddd;
 }
 
 tr:hover {
-  background-color: #f2f2f2; 
+  background-color: #f2f2f2;
 }
 
-@media (max-width: 868px) {
-  table {
-    width: 100%; 
-  }
-
-  th, td {
-    padding: 8px; 
-    font-size: 14px; 
-  }
-}
-
-
-.editar{
+/* Botones */
+.editar {
   text-decoration: none;
   color: white;
   background-color: #31C7D3;
-  margin: auto 10px;
+  margin: auto 5px;
   padding: 5px 10px;
   border-radius: 5px;
-
+  display: inline-block;
 }
 
 .eliminar {
   color: white;
   background-color: red;
-  margin: auto 10px;
+  margin: auto 5px;
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block; /* Cada fila se convierte en bloque */
+  }
+
+  thead {
+    display: none; /* Ocultamos encabezados */
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label); /* Mostramos el nombre de la columna */
+    position: absolute;
+    left: 10px;
+    width: calc(50% - 20px);
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .editar, .eliminar {
+    margin: 5px 2px;
+    width: 45%;
+    display: inline-block;
+    text-align: center;
+  }
 }
